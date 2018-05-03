@@ -19,7 +19,9 @@ library
     Levity.Applicative 
     Levity.Foldable 
     Levity.Functor 
+    Levity.Monoid 
     Levity.Num
+    Levity.Semigroup 
     Levity.Show
 
   build-depends:
