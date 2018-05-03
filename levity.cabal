@@ -17,10 +17,12 @@ library
   exposed-modules:
     Levity
     Levity.Applicative 
+    Levity.Eq 
     Levity.Foldable 
     Levity.Functor 
     Levity.Monoid 
     Levity.Num
+    Levity.Ord 
     Levity.Semigroup 
     Levity.Show
 
