@@ -30,10 +30,11 @@ library
   exposed-modules:
     Levity
       Levity.Class
---        Levity.Class.Applicative
+        Levity.Class.Applicative
         Levity.Class.Eq
---        Levity.Class.Foldable
+        Levity.Class.Foldable
         Levity.Class.Functor
+        Levity.Class.Monad
         Levity.Class.Monoid
         Levity.Class.Num
         Levity.Class.Ord
@@ -42,7 +43,7 @@ library
      Levity.Types
        Levity.Types.Base
 --       Levity.Types.IO
---       Levity.Types.ST
+       Levity.Types.ST
   build-depends:
     , base >= 4.12 && < 4.14
     , integer-gmp

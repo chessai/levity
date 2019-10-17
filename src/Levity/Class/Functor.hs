@@ -44,25 +44,9 @@ deriving via (Base1 NonEmpty) instance FunctorL NonEmpty
 deriving via (Base1 ReadP) instance FunctorL ReadP
 deriving via (Base1 ReadPrec) instance FunctorL ReadPrec
 deriving via (Base1 Down) instance FunctorL Down
-{-
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
-deriving via (Base1 x) instance FunctorL x
--}
---deriving via (Base1 (Generic.Rec1 f)) instance FunctorL (Generic.Rec1 f)
 deriving via (Base1 (Semigroup.Arg a)) instance FunctorL (Semigroup.Arg a)
---deriving via (Base1 Proxy) instance FunctorL Proxy
 deriving via (Base1 (ST s)) instance FunctorL (ST s)
 deriving via (Base1 ((,) a)) instance FunctorL ((,) a)
---deriving via (Base1 Generic.U1) instance FunctorL Generic.U1
---deriving via (Base1 Generic.V1) instance FunctorL Generic.V1
 deriving via (Base1 (Prelude.Either a)) instance FunctorL (Prelude.Either a)
 deriving via (Base1 Complex) instance FunctorL Complex
 deriving via (Base1 Semigroup.Min) instance FunctorL Semigroup.Min
@@ -73,7 +57,6 @@ deriving via (Base1 Semigroup.Option) instance FunctorL Semigroup.Option
 deriving via (Base1 ArgOrder) instance FunctorL ArgOrder
 deriving via (Base1 OptDescr) instance FunctorL OptDescr
 deriving via (Base1 ArgDescr) instance FunctorL ArgDescr
---deriving via (Base1 ZipList) instance FunctorL ZipList
 deriving via (Base1 Identity) instance FunctorL Identity
 deriving via (Base1 Handler) instance FunctorL Handler
 deriving via (Base1 STM) instance FunctorL STM
@@ -84,6 +67,13 @@ deriving via (Base1 Monoid.Sum) instance FunctorL Monoid.Sum
 deriving via (Base1 Monoid.Product) instance FunctorL Monoid.Product
 
 {-
+--deriving via (Base1 ZipList) instance FunctorL ZipList
+--deriving via (Base1 Generic.U1) instance FunctorL Generic.U1
+--deriving via (Base1 Generic.V1) instance FunctorL Generic.V1
+--deriving via (Base1 Proxy) instance FunctorL Proxy
+--deriving via (Base1 (Generic.Rec1 f)) instance FunctorL (Generic.Rec1 f)
+--deriving via (Base1 (Const m)) instance FunctorL (Const m)
+
 deriveFunctor(Semigroup.Arg a)
 deriveFunctorC2(Prelude.Functor f, Functor f, Generic.Rec1 f)
 deriveFunctor(Generic.URec Prelude.Char)

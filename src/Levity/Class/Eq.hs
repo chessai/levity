@@ -5,7 +5,6 @@ module Levity.Class.Eq
 
 import GHC.Base (Bool)
 import GHC.Prim
-import Prelude ()
 
 import qualified Prelude
 
