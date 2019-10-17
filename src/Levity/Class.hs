@@ -1,0 +1,4 @@
+module Levity.Class
+  (
+  ) where
+

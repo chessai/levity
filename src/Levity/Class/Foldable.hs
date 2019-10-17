@@ -1,12 +1,4 @@
-{-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE InstanceSigs      #-}
-{-# LANGUAGE MagicHash         #-}
-{-# LANGUAGE PolyKinds         #-}
-{-# LANGUAGE TypeInType        #-}
-{-# LANGUAGE UnboxedTuples     #-}
-{-# LANGUAGE ViewPatterns      #-}
-
-module Levity.Foldable
+module Levity.Class.Foldable
   ( Foldable(..)
   ) where
 
@@ -19,11 +11,12 @@ import qualified Prelude
 
 class Foldable (f :: Type -> TYPE (k :: RuntimeRep)) where
   {-# MINIMAL fold #-}
-  fold :: Monoid m => f m -> m 
+  fold :: Monoid m => f m -> m
 
+{-
 instance Prelude.Foldable f => Foldable (f :: Type -> Type) where
   fold = Foldable.fold
 
 instance Foldable ((# , #) a) where
   fold (# _, m #) = m
-
+-}

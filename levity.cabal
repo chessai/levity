@@ -1,38 +1,67 @@
-name:                levity
-version:             0.1.0.0
-synopsis:            levity-polymorphic versions of typeclasses in base
--- description:
-homepage:            https://github.com/chessai/levity.git
-license:             MIT
-license-file:        LICENSE
-author:              chessai
-maintainer:          chessai1996@gmail.com
--- copyright:
-category:            Prelude
-build-type:          Simple
-extra-source-files:  ChangeLog.md
-cabal-version:       >=1.10
+cabal-version: 2.2
+name:
+  levity
+version:
+  0.1
+synopsis:
+  levity-polymorphic typeclasses and types
+description:
+  FIXME
+homepage:
+  https://github.com/chessai/levity.git
+license:
+  MIT
+license-file:
+  LICENSE
+author:
+  chessai
+maintainer:
+  chessai <chessai1996@gmail.com>
+copyright:
+  FOOLS COPYRIGHT SOFTWARE, KINGS WRITE SOFTWARE
+category:
+  Prelude
+build-type:
+  Simple
+extra-source-files:
+  ChangeLog.md
 
 library
   exposed-modules:
     Levity
-    Levity.Applicative 
-    Levity.Eq 
-    Levity.Foldable 
-    Levity.Functor 
-    Levity.Monoid 
-    Levity.Num
-    Levity.Ord 
-    Levity.Semigroup 
-    Levity.Show
-
+      Levity.Class
+--        Levity.Class.Applicative
+        Levity.Class.Eq
+--        Levity.Class.Foldable
+        Levity.Class.Functor
+        Levity.Class.Monoid
+        Levity.Class.Num
+        Levity.Class.Ord
+        Levity.Class.Semigroup
+--        Levity.Class.Show
+     Levity.Types
+       Levity.Types.Base
+--       Levity.Types.IO
+--       Levity.Types.ST
   build-depends:
-      base
+    , base >= 4.12 && < 4.14
     , integer-gmp
     , ghc-prim
   hs-source-dirs:
     src
   default-language:
     Haskell2010
-
-  ghc-options: -Wall
+  ghc-options:
+    -Wall
+    -O2
+  default-extensions:
+      DerivingStrategies
+    , DerivingVia
+    , GeneralizedNewtypeDeriving
+    , InstanceSigs
+    , MagicHash
+    , PolyKinds
+    , ScopedTypeVariables
+    , StandaloneDeriving
+    , TypeInType
+    , ViewPatterns

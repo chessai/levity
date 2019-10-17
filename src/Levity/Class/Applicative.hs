@@ -1,3 +1,5 @@
+
+{-
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE InstanceSigs      #-}
 {-# LANGUAGE MagicHash         #-}
@@ -5,9 +7,10 @@
 {-# LANGUAGE TypeInType        #-}
 {-# LANGUAGE UnboxedTuples     #-}
 {-# LANGUAGE ViewPatterns      #-}
+-}
 
-module Levity.Applicative
-  ( Applicative(..)
+module Levity.Class.Applicative
+  ( --Applicative(..)
   ) where
 
 import GHC.Prim
@@ -17,11 +20,14 @@ import Prelude (Monoid(..))
 
 import qualified Prelude
 
+{-
 class Applicative (f :: Type -> TYPE (k :: RuntimeRep)) where
   {-# MINIMAL pure, (<*>) #-}
   pure :: a -> f a
   (<*>) :: f (a -> b) -> (f a -> f b)
+-}
 
+{-
 instance Prelude.Applicative f => Applicative (f :: Type -> Type) where
   pure = Prelude.pure
   (<*>) = (Prelude.<*>)
@@ -29,3 +35,4 @@ instance Prelude.Applicative f => Applicative (f :: Type -> Type) where
 instance Monoid m => Applicative ((# , #) m) where
   pure a = (# mempty, a #)
   (# m1, f #) <*> (# m2, x #) = (# m1 <> m2, f x #)
+-}
