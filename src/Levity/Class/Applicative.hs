@@ -10,7 +10,7 @@ import qualified Prelude
 import Levity.Types.Base
 import Levity.Class.Functor
 
-class FunctorL f => ApplicativeL f where
+class FunctorL f => ApplicativeL (f :: Type -> TYPE r) where
   {-# minimal pureL, apL #-}
   pureL :: a -> f a
   apL :: f (a -> b) -> (f a -> f b)

@@ -10,7 +10,7 @@ import qualified Prelude
 import Levity.Types.Base
 import Levity.Class.Applicative
 
-class ApplicativeL f => MonadL f where
+class ApplicativeL f => MonadL (f :: Type -> TYPE r) where
   {-# minimal bindL #-}
   bindL :: f a -> (a -> f b) -> f b
 
