@@ -8,7 +8,11 @@ import Prelude (String)
 
 import qualified Prelude
 
+import Levity.Types.Base
+
 class ShowL (a :: TYPE r) where
-  {-# minimal show #-}
+  {-# minimal showL #-}
   showL :: a -> String
 
+instance Prelude.Show a => ShowL (Base a) where
+  showL = Prelude.show
