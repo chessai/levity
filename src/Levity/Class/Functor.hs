@@ -10,14 +10,12 @@ import Data.Functor.Const (Const)
 import Data.Functor.Identity (Identity)
 import Data.List.NonEmpty (NonEmpty)
 import Data.Monoid qualified as Monoid
-import Data.Ord (Down)
 import Data.Proxy (Proxy)
 import Data.Semigroup qualified as Semigroup
-import Foreign.Ptr (Ptr)
 import GHC.Base (Type)
 import GHC.Conc (STM)
+import GHC.Exts
 import GHC.Generics qualified as Generic
-import GHC.Prim
 import Prelude
 import System.Console.GetOpt (ArgDescr, OptDescr, ArgOrder)
 import Text.ParserCombinators.ReadP (ReadP)
@@ -25,7 +23,8 @@ import Text.ParserCombinators.ReadPrec (ReadPrec)
 
 import Levity.Types.Base
 
-class FunctorL (f :: Type -> TYPE r) where
+type FunctorL :: (Type -> TYPE r) -> Constraint
+class FunctorL f where
   {-# minimal fmapL #-}
   fmapL :: (a -> b) -> (f a -> f b)
 

@@ -4,9 +4,7 @@ module Levity.Class.Show
 
 import GHC.Base
 import GHC.Prim
-import Prelude (String)
-
-import qualified Prelude
+import Prelude qualified
 
 import Levity.Types.Base
 

@@ -1,3 +1,0 @@
-module Levity.Types
-  (
-  ) where

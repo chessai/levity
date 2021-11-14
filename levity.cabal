@@ -29,7 +29,7 @@ extra-source-files:
 library
   exposed-modules:
     Levity
-      Levity.Class
+      -- Levity.Class
         Levity.Class.Applicative
         Levity.Class.Eq
         Levity.Class.Foldable
@@ -40,9 +40,9 @@ library
         Levity.Class.Ord
         Levity.Class.Semigroup
         Levity.Class.Show
-     Levity.Types
+     -- Levity.Types
        Levity.Types.Base
---       Levity.Types.IO
+       Levity.Types.IO
        Levity.Types.ST
   build-depends:
     , base >= 4.16 && < 4.19
@@ -59,7 +59,7 @@ library
     , DerivingStrategies
     , DerivingVia
     , FlexibleInstances
-    , GeneralizedNewtypeDeriving
+    , GeneralisedNewtypeDeriving
     , ImportQualifiedPost
     , InstanceSigs
     , MagicHash

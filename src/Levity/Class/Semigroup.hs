@@ -2,15 +2,13 @@ module Levity.Class.Semigroup
   ( SemigroupL(..)
   ) where
 
-import GHC.Base hiding (Semigroup)
-import GHC.Prim
-import Prelude ()
-
-import qualified Prelude
+import GHC.Exts
+import Prelude qualified
 
 import Levity.Types.Base
 
-class SemigroupL (a :: TYPE r) where
+type SemigroupL :: TYPE r -> Constraint
+class SemigroupL a where
   {-# minimal appendL #-}
   appendL :: a -> a -> a
 

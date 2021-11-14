@@ -14,7 +14,6 @@ module Levity.Types.Base
 import Data.Bits (Bits)
 import Data.Bifoldable (Bifoldable)
 import Data.Bitraversable (Bitraversable(bitraverse))
-import GHC.Enum (Enum, Bounded)
 import Data.Bifunctor (Bifunctor)
 import Data.Functor.Contravariant (Contravariant)
 import Data.String (IsString)
