@@ -1,5 +1,5 @@
 module Levity.Class.Foldable
-  ( --Foldable(..)
+  ( FoldableL(..)
   ) where
 
 import qualified Data.Foldable as Foldable
@@ -10,30 +10,12 @@ import qualified Prelude
 
 import Levity.Types.Base
 import Levity.Class.Monoid
+import Levity.Class.Semigroup
 
-{-
-class FoldableL (f :: Type -> TYPE r) where
-  {-# minimal foldMapL | foldrL #-}
+type FoldableL :: (Type -> TYPE r) -> Constraint
+class FoldableL f where
   foldMapL :: MonoidL m => (a -> m) -> f a -> m
-  foldrL :: forall (b :: TYPE r). (a -> b -> b) -> b -> f a -> b
+  foldrL :: (a -> b -> b) -> b -> f a -> b
 
-  foldMapL f = foldrL (appendL . f) (mempty ())
-
-  foldr f z t = appEndoL (foldMapL (EndoL . f) t) z
--}
-
---composeL :: forall (a :: TYPE r) (b :: TYPE r) (c :: TYPE r).
---  (b -> c) -> (a -> b) -> (a -> c)
---composeL = _ --f (g x)
-
---newtype EndoL (a :: TYPE r) = EndoL { appEndo :: a -> a }
---
---instance SemigroupL (EndoL a) where
-
-{-
-instance Prelude.Foldable f => Foldable (f :: Type -> Type) where
-  fold = Foldable.fold
-
-instance Foldable ((# , #) a) where
-  fold (# _, m #) = m
--}
+  foldMapL f = foldrL (\a m -> appendL (f a) m) (memptyL ())
+  -- foldrL f z t = appEndoL (foldMapL (\a -> EndoL (f a)) t) z
