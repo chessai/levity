@@ -39,14 +39,13 @@ library
         Levity.Class.Num
         Levity.Class.Ord
         Levity.Class.Semigroup
---        Levity.Class.Show
+        Levity.Class.Show
      Levity.Types
        Levity.Types.Base
 --       Levity.Types.IO
        Levity.Types.ST
   build-depends:
-    , base >= 4.12 && < 4.14
-    , integer-gmp
+    , base >= 4.16 && < 4.19
     , ghc-prim
   hs-source-dirs:
     src
@@ -56,13 +55,20 @@ library
     -Wall
     -O2
   default-extensions:
-      DerivingStrategies
+      BangPatterns
+    , DerivingStrategies
     , DerivingVia
+    , FlexibleInstances
     , GeneralizedNewtypeDeriving
+    , ImportQualifiedPost
     , InstanceSigs
     , MagicHash
     , PolyKinds
     , ScopedTypeVariables
     , StandaloneDeriving
+    , StandaloneKindSignatures
     , TypeInType
+    , TypeOperators
+    , UnboxedSums
+    , UnboxedTuples
     , ViewPatterns
