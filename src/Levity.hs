@@ -15,6 +15,7 @@ module Levity
   , MonoidL(..)
 
   , FunctorL(..)
+  , ApplyL(..)
   , ApplicativeL(..)
   , MonadL(..)
   , FoldableL(..)
