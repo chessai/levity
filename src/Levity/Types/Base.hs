@@ -44,4 +44,3 @@ newtype Base2 f a b = Base2 { getBase2 :: f a b }
 
 instance Bitraversable f => Bitraversable (Base2 f) where
   bitraverse f g (Base2 x) = Base2 <$> bitraverse f g x
-
