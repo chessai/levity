@@ -29,21 +29,23 @@ extra-source-files:
 library
   exposed-modules:
     Levity
-      -- Levity.Class
-        Levity.Class.Applicative
-        Levity.Class.Eq
-        Levity.Class.Foldable
-        Levity.Class.Functor
-        Levity.Class.Monad
-        Levity.Class.Monoid
-        Levity.Class.Num
-        Levity.Class.Ord
-        Levity.Class.Semigroup
-        Levity.Class.Show
-     -- Levity.Types
-       Levity.Types.Base
-       Levity.Types.IO
-       Levity.Types.ST
+  other-modules:
+    Levity.Class.Applicative
+    Levity.Class.Eq
+    Levity.Class.Foldable
+    Levity.Class.Functor
+    Levity.Class.Monad
+    Levity.Class.Monoid
+    Levity.Class.Num
+    Levity.Class.Ord
+    Levity.Class.Semigroup
+    Levity.Class.Show
+
+    Levity.Types.Base
+    Levity.Types.Either
+    Levity.Types.IO
+    Levity.Types.Maybe
+    Levity.Types.ST
   build-depends:
     , base >= 4.16 && < 4.19
     , ghc-prim
@@ -63,10 +65,14 @@ library
     , ImportQualifiedPost
     , InstanceSigs
     , MagicHash
+    , PackageImports
+    , PatternSynonyms
     , PolyKinds
+    , RoleAnnotations
     , ScopedTypeVariables
     , StandaloneDeriving
     , StandaloneKindSignatures
+    , TypeFamilies
     , TypeInType
     , TypeOperators
     , UnboxedSums
